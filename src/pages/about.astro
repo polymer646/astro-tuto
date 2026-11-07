@@ -1,5 +1,23 @@
 ---
+const pageTitle = "A propos de moi";
 
+const identity = {
+    firstName: "Jeremy",
+    country: "France",
+    occupation: "Développeur web",
+    hobbies: ["video games", "lecture", "musique", "voyages"],
+};
+
+const skills = [
+    { name: "HTML", level: "Avancé" },
+    { name: "CSS", level: "Avancé" },
+    { name: "JavaScript", level: "Intermédiaire" },
+    { name: "Astro", level: "Débutant" },
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -9,17 +27,17 @@
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
-		<nav aria-label="Navigation principale">
-			<ul>
-				<li><a href="/">Accueil</a></li>
-				<li><a href="/about">À propos</a></li>
-				<li><a href="/blog">Blog</a></li>
-			</ul>
-		</nav>
-        <h1>À propos de moi</h1>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/about">À propos</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+        <h1>{pageTitle}</h1>
         <h2>... et de mon nouveau site Astro !</h2>
 
         <p>
@@ -33,5 +51,44 @@
             davantage le tutoriel, alors revenez régulièrement voir comment se
             déroule mon parcours !
         </p>
+
+        <p>Voici quelques faits me concernant :</p>
+        <ul>
+            <li>Je m'appelle {identity.firstName}.</li>
+            <li>
+                Je vis au {identity.country} et je travaille en tant que {
+                    identity.occupation
+                }.
+            </li>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        Deux de mes loisirs sont : {identity.hobbies[0]} et{" "}
+                        {identity.hobbies[1]}
+                    </li>
+                )
+            }
+        </ul>
+        <p>Voici mes compétences :</p>
+        <ul>
+            {
+                skills.map((skill) => (
+                    <li>
+                        {skill.name} : {skill.level}
+                    </li>
+                ))
+            }
+        </ul>
+        {happy && <p>Je suis heureux d'apprendre Astro !</p>}
+
+        {finished && <p>J'ai terminé ce tutoriel !</p>}
+
+        {
+            goal === 3 ? (
+                <p>Mon objectif est de terminer en 3 jours.</p>
+            ) : (
+                <p>Mon objectif n'est pas de 3 jours.</p>
+            )
+        }
     </body>
 </html>

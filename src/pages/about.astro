@@ -18,6 +18,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "Crimson";
+const fontSize = "4rem";
+const textTransform = "uppercase";
 ---
 
 <html lang="en">
@@ -28,6 +32,17 @@ const goal = 3;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+        <style define:vars={{ skillColor, fontSize, textTransform }}>
+            h1 {
+                color: purple;
+                font-size: var(--fontSize);
+                text-transform: var(--textTransform);
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <nav aria-label="Navigation principale">
@@ -73,7 +88,7 @@ const goal = 3;
         <ul>
             {
                 skills.map((skill) => (
-                    <li>
+                    <li class="skill">
                         {skill.name} : {skill.level}
                     </li>
                 ))

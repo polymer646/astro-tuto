@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://splendorous-khapse-715a10.netlify.app//sitemap-index.xml

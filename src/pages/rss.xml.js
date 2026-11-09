@@ -1,9 +1,9 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import rss, { pagesGlobToRssItems } from "@astrojs/rss";
+import { getCollection } from "astro:content";
 export async function GET(context) {
   const posts = await getCollection("blog");
   return rss({
-    title: 'Apprenti Astro | Blog',
+    title: "Apprenti Astro | Blog",
     description: "Mon parcours d'apprentissage d'Astro",
     site: context.site,
     items: posts.map((post) => ({

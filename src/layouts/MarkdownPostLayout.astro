@@ -5,45 +5,45 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>{frontmatter.pubDate.toLocaleDateString()}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Écrit par : {frontmatter.author}</p>
-    <Image
-        width="300"
-        height="200"
-        src={frontmatter.image.url}
-        alt={frontmatter.image.alt}
-        loading="eager"
-    />
+  <p>{frontmatter.pubDate.toLocaleDateString()}</p>
+  <p>
+    <em>{frontmatter.description}</em>
+  </p>
+  <p>Écrit par : {frontmatter.author}</p>
+  <Image
+    width="300"
+    height="200"
+    src={frontmatter.image.url}
+    alt={frontmatter.image.alt}
+    loading="eager"
+  />
 
-    <div class="tags">
-        {
-            frontmatter.tags.map((tag: string) => (
-                <p class="tag">
-                    <a href={`/tags/${tag}`}>{tag}</a>
-                </p>
-            ))
-        }
-    </div>
+  <div class="tags">
+    {frontmatter.tags.map((tag: string) => (
+      <p class="tag">
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </p>
+    ))}
+  </div>
 
-    <slot />
+  <slot />
 </BaseLayout>
 <style>
-    a {
-        color: #00539f;
-    }
+  a {
+    color: #00539f;
+  }
 
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: 0.5em;
-        padding: 0.5em 1em;
-        font-size: 1.15em;
-        background-color: #f8fcfd;
-    }
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
 </style>

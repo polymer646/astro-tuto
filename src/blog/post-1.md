@@ -1,13 +1,14 @@
 ---
-title: 'Mon premier article de blog'
+title: "Mon premier article de blog"
 pubDate: 2022-07-01
 description: "Il s'agit du premier article de mon nouveau blog Astro."
-author: 'Apprenti Astro'
+author: "Apprenti Astro"
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: "Le logo Astro sur un fond sombre avec une lueur rose."
+  url: "https://docs.astro.build/assets/rose.webp"
+  alt: "Le logo Astro sur un fond sombre avec une lueur rose."
 tags: ["astro", "blogging", "apprentissage en public"]
 ---
+
 Bienvenue sur mon _nouveau blog_ dédié à l'apprentissage d'Astro ! Ici, je vais partager mon parcours d'apprentissage en créant un nouveau site web.
 
 ## Ce que j'ai accompli
